@@ -1,6 +1,8 @@
 # Musizplz
 
 ## What it does
+### Download any youtube video on your phone as a music file.
+ 
 It looks for all the youtube links inside the file youtube_links.txt and
 goes out to youtube to download them. It downloads songs/video and convert them into a .opus music file.
 Once it's done downloading every link, it search throught your local network for the local IP address of your device's MAC Address.
