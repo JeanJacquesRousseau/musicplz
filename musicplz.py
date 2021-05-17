@@ -14,6 +14,9 @@ oldlink = open("/home/jjr/Music/youtube_downloader/downloaded_links.txt","a+")
 # Options : --output filename
 #			-e will return youtube title of URL			
 #			-x extracts audio content
+#TODO: Replace path with universal environnment constant : ie $HOME
+#TODO: Extract exact filename after download to use when adb push
+# Or force a name, theres an issue sometime we get .m4a and not always .opus
 PRE 			 = "youtube-dl "
 L_DIR			 = '/home/jjr/Music/"'
 pre_title_comm   = PRE + "-e "
