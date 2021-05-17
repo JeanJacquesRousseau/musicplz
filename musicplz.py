@@ -27,7 +27,7 @@ filename 		 = "youtube_links.txt"
 
 # os.system("gedit " + filename)
 print "Getting your tunes brah"
-file = open("/home/jjr/Music/youtube_downloader/youtube_links.txt","r+")
+link_file = open("/home/jjr/Music/youtube_downloader/youtube_links.txt","r+")
 
 status, arp_line = commands.getstatusoutput(arp_comm)
 mac_addr = re.search(r'([0-9A-F]{2}[:-]){5}([0-9A-F]{2})',arp_line , re.I).group()
@@ -40,7 +40,7 @@ connect_comm = "adb connect "+ ip
 os.system(connect_comm)
 os.system("adb devices")
 
-for line in file:	
+for line in link_file:	
 
 	# Rewrite link to be downloaded in file "downloaded_links.txt"
 #	oldlink.write(line)
@@ -67,7 +67,7 @@ os.system("adb disconnect")
 print "Download is done, go ahead and enjoy your music, please"
 # Clean and close "youtube_links.txt" 
 # file.truncate(0) 
-file.close()
+link_file.close()
 
 
 
