@@ -10,6 +10,8 @@ The device's MAC Address is written line 24, you are welcome to modify that line
 ## What you need
 This application was intented to run Ubuntu 16+
 You need to enable android debug bridge on your phone.
+You also need to modify some path in the musicplz.py file...
+I will be working on a new version soon to take care of this.
 
 
 ## How to use it
@@ -25,8 +27,7 @@ python musicplz.py
 alias musicplz ='python /home/<your own path>/.../musicplz.py'
 `
 
-5. You can now write musicplz in terminal to have the links in youtube_links.txt be downloaded!
-
+5. You can now write musicplz in terminal to have the links in youtube_links.txt be downloadede
 All the youtube links inside the file youtube_links.txt will be and erased from youtube_links.txt to be written in downloaded_links.txt as they are downloaded.
 
 
