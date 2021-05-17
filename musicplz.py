@@ -36,38 +36,40 @@ ip = re.search(r'\((.*?)\)',arp_line).group(1)
 # print "IP Address : ", ip
 # print "MAC Address: ", mac_addr
 
-connect_comm = "adb connect "+ ip +":5555"
+connect_comm = "adb connect "+ ip 
 os.system(connect_comm)
 os.system("adb devices")
 
 for line in file:	
 
 	# Rewrite link to be downloaded in file "downloaded_links.txt"
-	oldlink.write(line)
+#	oldlink.write(line)
 	
 	# Extracts youtube title in string d_title 
+	line = line.replace('\n','')
 	title_comm = pre_title_comm + line
 	print title_comm
 	status, d_title = commands.getstatusoutput(title_comm)
 
+	print "d_title : ", d_title
 	# Appends ../, remove any '/' in title name  and surround title with ""
-	d_title = d_title.replace('"','')
-	title = d_title.replace('/','')+ '.opus" '
+	m_title = d_title.replace('"','')
+	title = m_title.replace('/','')+ '.opus" '
 	comm = pre_comm+L_DIR+title+p_audio+line
-
 	print comm
 	os.system(comm)
 	comm = toA + title+ path
-	time.sleep(1)
 	os.system(comm)
-#	print comm
+	print comm
 	
 oldlink.close()
 os.system("adb disconnect")
 print "Download is done, go ahead and enjoy your music, please"
 # Clean and close "youtube_links.txt" 
-file.truncate(0) 
+# file.truncate(0) 
 file.close()
+
+
 
 # TODO: Compare files in /home/jjr/Music with files in Samsung Galaxy phone and upload missing one to the phone.
 
