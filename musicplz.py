@@ -24,7 +24,7 @@ pre_comm		 = PRE + "--output "
 p_audio			 = "-x "
 toA 			 = 'adb push /home/jjr/Music/"'
 path			 = "/sdcard/Music"
-s9_MAC 			 = "c6:33:98:0d:36:cb"
+s9_MAC 			 = "44:91:60:4f:6e:11"
 arp_comm		 = "arp -a | grep " + s9_MAC
 filename 		 = "youtube_links.txt"
 
@@ -46,7 +46,7 @@ os.system("adb devices")
 for line in link_file:	
 
 	# Rewrite link to be downloaded in file "downloaded_links.txt"
-#	oldlink.write(line)
+	oldlink.write(line)
 	
 	# Extracts youtube title in string d_title 
 	line = line.replace('\n','')
@@ -69,7 +69,7 @@ oldlink.close()
 os.system("adb disconnect")
 print "Download is done, go ahead and enjoy your music, please"
 # Clean and close "youtube_links.txt" 
-# file.truncate(0) 
+link_file.truncate() 
 link_file.close()
 
 
