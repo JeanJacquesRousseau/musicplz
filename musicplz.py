@@ -16,6 +16,8 @@ oldlink = open("/home/jjr/Music/youtube_downloader/downloaded_links.txt","a+")
 #			-x extracts audio content
 #TODO: Replace path with universal environnment constant : ie $HOME
 #TODO: Extract exact filename after download to use when adb push
+#TODO: Remove "%" in title
+
 # Or force a name, theres an issue sometime we get .m4a and not always .opus
 PRE 			 = "youtube-dl "
 L_DIR			 = '/home/jjr/Music/"'
@@ -39,6 +41,9 @@ ip = re.search(r'\((.*?)\)',arp_line).group(1)
 # print "IP Address : ", ip
 # print "MAC Address: ", mac_addr
 
+
+# adb tcpip 5555
+# adb connect ip:5555
 connect_comm = "adb connect "+ ip 
 os.system(connect_comm)
 os.system("adb devices")
